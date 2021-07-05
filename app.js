@@ -2,11 +2,12 @@
 const memo = new Map();
 memo.set(o,o);
 memo.set(1,1);
-function fib(n) {
+memo.set(2,1);
+function trib(n) {
 	if (memo.has(n)) {
 		return memo.get(n);
 	}
-	const value = fib(n - 1) + fib(n - 2);
+	const value = trib(n - 1) + trib(n - 2) + trib(n - 3);
 	memo.set(n, value);
 	return value;
 }
